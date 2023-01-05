@@ -15,8 +15,10 @@ function App() {
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    console.log(responseJson);
-    setMovies(responseJson.Search);
+    if (responseJson.Search) {
+
+      setMovies(responseJson.Search);
+    }
   };
 
   useEffect(() => {
